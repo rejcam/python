@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Générateur de Thèmes - Mot pour mot</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+    }
+
+    #theme {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #222;
+      padding: 15px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 90%;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 Générateur de Thèmes</h1>
+  <div id="theme">Clique sur le bouton pour générer un thème</div>
+  <button onclick="genererTheme()">🎯 Générer un thème</button>
+
+  <script>
+    const themes = [
+      "dans une école", "dans une cuisine", "dans un aéroport", "dans un musée",
+      "dans une ferme", "dans un parc d’attractions",
+      "qu’on fait en vacances", "qu’on fait à l’école", "qu’on fait au travail",
+      "qu’on fait quand il pleut", "qu’on fait en famille",
+      "métiers", "célébrités", "personnages de fiction", "types de sportifs",
+      "métiers qu’on rêvait de faire enfant",
+      "objets technologiques", "objets coupants", "objets qu’on trouve dans une salle de bain",
+      "objets en plastique", "objets anciens",
+      "choses qui font peur", "choses qui font rire", "sons qu’on entend souvent",
+      "trucs qu’on trouve dans un sac à dos", "trucs qu’on mange au petit déjeuner"
+    ];
+
+    function genererTheme() {
+      const randomIndex = Math.floor(Math.random() * themes.length);
+      const theme = themes[randomIndex];
+      document.getElementById('theme').textContent = "Thème : " + theme;
+    }
+  </script>
+
+</body>
+</html>
