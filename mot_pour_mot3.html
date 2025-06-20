@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Générateur de Thèmes - Mot pour mot</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #333;
+    }
+
+    #theme {
+      margin-top: 30px;
+      font-size: 48px;
+      color: #222;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 90%;
+    }
+
+    #timer {
+      font-size: 48px;
+      color: #d32f2f;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 30px 50px;
+      font-size: 32px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 Générateur de Thèmes</h1>
+  <div id="theme">Clique sur le bouton pour générer un thème</div>
+  <div id="timer">⏱️ 30</div>
+  <button onclick="genererTheme()">🎯 Générer un thème</button>
+
+  <script>
+    const themes = [
+      "objets en métal", "choses rouges", "mots en anglais", "films célèbres", "noms de villes",
+      "instruments de musique", "objets dans une valise", "nourriture qu'on met au frigo",
+      "choses longues", "objets qui roulent", "animaux du zoo", "mots avec deux syllabes",
+      "choses qui brillent", "activités d'été", "trucs dans un sac à main", "vêtements d’hiver",
+      "appareils électroniques", "outils de bricolage", "choses collantes", "jouets pour enfants",
+      "choses qui font peur", "plantes ou fleurs", "moyens de transport", "sports d’équipe",
+      "plats typiques du Québec", "objets dans une salle de bain", "couleurs", "choses qu'on peut casser",
+      "animaux de la ferme", "villes du Canada", "outils de cuisine", "langues parlées dans le monde",
+      "choses qu'on entend", "objets de bureau", "choses qu'on trouve à l'école", "fruits", "légumes",
+      "métiers", "célébrités", "choses dans un garage", "objets tranchants", "éléments de la nature",
+      "personnages de dessins animés", "émotions", "objets en plastique", "activités en famille",
+      "jeux de société", "éléments dans un repas", "objets de camping", "éléments d’un ordinateur",
+      "pièces de la maison", "trucs dans un frigo", "choses rondes", "choses carrées", "choses qui volent",
+      "choses qu’on peut plier", "objets recyclables", "animaux marins", "formes géométriques",
+      "choses dans un avion", "choses qu’on met dans une valise", "bruits d’animaux", "objets d’Halloween",
+      "accessoires de mode", "trucs qu’on met sur la tête", "aliments sucrés", "éléments d’un mariage",
+      "objets de Noël", "choses qu’on trouve dans un parc", "pays d’Europe", "personnages historiques",
+      "choses qu’on met dans un sandwich", "accessoires pour bébé", "vêtements en été",
+      "choses à faire en vacances", "émissions de télévision", "choses qu’on jette", "choses qui rebondissent",
+      "choses qui font du bruit", "insectes", "choses dans une pharmacie", "types de boissons",
+      "trucs qu’on trouve dans la rue", "objets dangereux", "choses qu’on peut empiler", 
+      "choses glissantes", "accessoires de sport", "types de chiens", "noms d’arbres",
+      "choses dans une cuisine de restaurant", "choses qu’on trouve dans un port", 
+      "objets d’un musicien", "objets de plage", "outils de jardinage", "mots qu’on peut crier",
+      "choses qui fondent", "choses à collectionner", "parties du corps", "trucs qu’on peut manger cru",
+      "trucs qu’on trouve dans une bibliothèque", "trucs qu’on voit dans un film d’action",
+      "outils de coiffure", "accessoires de voyage", "objets technologiques"
+    ];
+
+    let timerInterval;
+
+    function genererTheme() {
+      const randomIndex = Math.floor(Math.random() * themes.length);
+      const theme = themes[randomIndex];
+      document.getElementById('theme').textContent = "Thème : " + theme;
+
+      let tempsRestant = 30;
+      const timerElement = document.getElementById('timer');
+      timerElement.textContent = "⏱️ " + tempsRestant;
+
+      clearInterval(timerInterval);
+
+      timerInterval = setInterval(() => {
+        tempsRestant--;
+        if (tempsRestant >= 0) {
+          timerElement.textContent = "⏱️ " + tempsRestant;
+        } else {
+          clearInterval(timerInterval);
+          timerElement.textContent = "⏱️ Temps écoulé !";
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
