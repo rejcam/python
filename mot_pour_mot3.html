@@ -63,42 +63,56 @@
 
   <script>
     const themes = [
-      "objets en métal", "choses rouges", "mots en anglais", "films célèbres", "noms de villes",
-      "instruments de musique", "objets dans une valise", "nourriture qu'on met au frigo",
-      "choses longues", "objets qui roulent", "animaux du zoo", "mots avec deux syllabes",
-      "choses qui brillent", "activités d'été", "trucs dans un sac à main", "vêtements d’hiver",
-      "appareils électroniques", "outils de bricolage", "choses collantes", "jouets pour enfants",
-      "choses qui font peur", "plantes ou fleurs", "moyens de transport", "sports d’équipe",
-      "plats typiques du Québec", "objets dans une salle de bain", "couleurs", "choses qu'on peut casser",
-      "animaux de la ferme", "villes du Canada", "outils de cuisine", "langues parlées dans le monde",
-      "choses qu'on entend", "objets de bureau", "choses qu'on trouve à l'école", "fruits", "légumes",
-      "métiers", "célébrités", "choses dans un garage", "objets tranchants", "éléments de la nature",
-      "personnages de dessins animés", "émotions", "objets en plastique", "activités en famille",
-      "jeux de société", "éléments dans un repas", "objets de camping", "éléments d’un ordinateur",
-      "pièces de la maison", "trucs dans un frigo", "choses rondes", "choses carrées", "choses qui volent",
-      "choses qu’on peut plier", "objets recyclables", "animaux marins", "formes géométriques",
-      "choses dans un avion", "choses qu’on met dans une valise", "bruits d’animaux", "objets d’Halloween",
-      "accessoires de mode", "trucs qu’on met sur la tête", "aliments sucrés", "éléments d’un mariage",
-      "objets de Noël", "choses qu’on trouve dans un parc", "pays d’Europe", "personnages historiques",
-      "choses qu’on met dans un sandwich", "accessoires pour bébé", "vêtements en été",
-      "choses à faire en vacances", "émissions de télévision", "choses qu’on jette", "choses qui rebondissent",
-      "choses qui font du bruit", "insectes", "choses dans une pharmacie", "types de boissons",
-      "trucs qu’on trouve dans la rue", "objets dangereux", "choses qu’on peut empiler", 
-      "choses glissantes", "accessoires de sport", "types de chiens", "noms d’arbres",
-      "choses dans une cuisine de restaurant", "choses qu’on trouve dans un port", 
-      "objets d’un musicien", "objets de plage", "outils de jardinage", "mots qu’on peut crier",
-      "choses qui fondent", "choses à collectionner", "parties du corps", "trucs qu’on peut manger cru",
-      "trucs qu’on trouve dans une bibliothèque", "trucs qu’on voit dans un film d’action",
-      "outils de coiffure", "accessoires de voyage", "objets technologiques"
+      "dans une école", "dans une cuisine", "dans un avion", "sur la lune",
+      "dans un hôpital", "dans une épicerie", "dans un ascenseur", "dans un musée",
+      "sur une plage", "dans une forêt", "dans un centre d’achats", "dans un stade",
+      "dans un port", "dans une gare", "dans un château", "dans une maison hantée",
+      "objets rouges", "objets brillants", "objets en plastique", "objets qui flottent",
+      "objets électroniques", "choses carrées", "objets anciens", "objets dangereux",
+      "objets recyclables", "objets pointus", "objets mous", "objets qu’on peut lancer",
+      "objets dans une trousse de premiers soins", "objets dans une boîte à outils",
+      "animaux marins", "animaux de la ferme", "insectes", "animaux dangereux",
+      "animaux mignons", "animaux qu’on peut dresser", "animaux avec des plumes",
+      "animaux qui sautent", "animaux nocturnes", "animaux à quatre pattes",
+      "fruits exotiques", "plats typiques québécois", "aliments sucrés", 
+      "choses qu’on mange au déjeuner", "repas rapides", "ingrédients de pizza",
+      "ingrédients de salade", "boissons gazeuses", "épices", "trucs qu’on met sur un hot-dog",
+      "chapeaux", "chaussures", "vêtements d’hiver", "accessoires de mode",
+      "vêtements pour la pluie", "vêtements pour la plage", "objets en cuir",
+      "activités d’été", "activités d’hiver", "choses qu’on fait en vacances",
+      "activités à la maison", "activités à l’école", "activités à faire seul",
+      "sports d’équipe", "sports de glisse", "jeux de société", "trucs qu’on peut collectionner",
+      "pouvoirs magiques", "monstres", "super-héros", "sorts de sorciers",
+      "objets dans un jeu vidéo", "éléments d’un conte de fée", "objets d’un film d’horreur",
+      "armes médiévales", "créatures fantastiques", "inventions imaginaires",
+      "célébrités", "types de métiers", "pays d’Europe", "langues", 
+      "émissions de télé", "réseaux sociaux", "fêtes religieuses", "émotions",
+      "chansons connues", "danses populaires", "films des années 90", "dessins animés",
+      "moyens de transport", "véhicules à roues", "véhicules volants", "véhicules lents",
+      "choses qu’on voit sur une route", "parties d’un vélo", "types de bateaux",
+      "objets dans une classe", "objets dans un sac à dos", "objets dans un casier",
+      "fournitures scolaires", "objets sur un bureau", "matières scolaires", "jeux de récréation",
+      "éléments de la nature", "types de fleurs", "arbres", "phénomènes météo",
+      "trucs qu’on trouve sur la plage", "choses qu’on voit dans le ciel", "choses dans un jardin",
+      "choses qui font peur", "choses qui font rire", "sons qu’on entend",
+      "trucs qu’on peut empiler", "choses qu’on peut casser", "trucs qui collent",
+      "choses qu’on peut lancer", "choses qui rebondissent", "trucs froids",
+      "choses qu’on trouve dans un sac", "choses qui sentent bon", "choses qu’on peut plier",
+      "choses qu’on oublie souvent", "trucs qu’on apporte en voyage", 
+      "trucs qui tombent du ciel", "choses qui brillent dans le noir"
     ];
 
+    let index = 0;
     let timerInterval;
 
     function genererTheme() {
-      const randomIndex = Math.floor(Math.random() * themes.length);
-      const theme = themes[randomIndex];
+      const theme = themes[index];
       document.getElementById('theme').textContent = "Thème : " + theme;
 
+      // Avancer au thème suivant
+      index = (index + 1) % themes.length;
+
+      // Timer
       let tempsRestant = 30;
       const timerElement = document.getElementById('timer');
       timerElement.textContent = "⏱️ " + tempsRestant;
